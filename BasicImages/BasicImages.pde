@@ -1,13 +1,21 @@
-PImage cac;
 
+PImage cac;
+float sz;
 void setup(){
-  size(1000,800);
+  size(760,893);
 cac = loadImage("PRICKLY PEAR.jpg");
 imageMode(CENTER);
+background(0);
+noStroke();
 }
 
+
 void draw(){
-  background(0);
- image(cac,mouseX,mouseY, cac.width/1.5, cac.height/1.5); 
-  
+  sz = map(mouseY,0,height,1,20);
+for (int i = 0; i < 30; i++) {
+int x = int(random(width));
+int y = int(random(height));
+  fill(cac.get(x, y));
+  ellipse(x,y,sz,sz);
+}
 }
