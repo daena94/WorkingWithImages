@@ -1,12 +1,15 @@
-PImage cat;
+//delcare variables
+PImage cats;
 PImage gal;
 
 void setup() {
-  size(900,900);
-  cat = loadImage("cat.png");
+  size(849,855); //set canvas size
+  //initialize variables
+  cats = loadImage("cats.png");
   gal = loadImage("gal.jpg");
-  gal.blend(cat,0,0,gal.width,gal.height,0,0,cat.width,cat.height,DARKEST);
+  gal.blend(cats,0,0,gal.width,gal.height,0,0,cats.width,cats.height,DARKEST); //blend cats.jpg and gal.jpg
 }
 void draw() {
-  image(gal,0,0);
+  image(gal,0,0); //display gal.jpg
+  filter(POSTERIZE, 4);  //set filter to POSTERIZE
 }
